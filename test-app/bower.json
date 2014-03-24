@@ -1,0 +1,12 @@
+{
+  "name": "test-app",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.10.2",
+    "requirejs": "~2.1.11",
+    "almond": "~0.2.9",
+    "handlebars": "~1.3.0"
+  },
+  "devDependencies": {}
+}

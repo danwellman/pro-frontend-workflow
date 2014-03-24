@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node logger</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <button id="someAction">Some button</button>
+    <script>
+        (function () {          
+            'use strict';
+
+            var button = document.getElementById('someAction');
+
+            function sendLog(message) {
+                var beacon = document.createElement('img');
+                beacon.src = 'http://localhost:8080/logger/?message=' + encodeURIComponent(message);
+                beacon.style.display = 'none';
+                
+                document.body.appendChild(beacon);
+            };
+			
+            function logMessage(message, send) {
+                console.log(message);
+
+                if (send) {
+                    sendLog(message);
+                }
+            }
+
+            logMessage('Page loaded', true);
+
+            button.addEventListener('click', function () {
+                logMessage('The button was clicked!', true);
+            });
+        }());
+    </script>
+</body>
+</html>
